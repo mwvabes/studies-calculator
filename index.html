@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>PRz | Kalkulator by Vabes</title>
+  
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,600i,900" rel="stylesheet"> 
+
+</head>
+<body>
+
+<div class="info">
+  <div class="container">
+    
+  </div>
+</div> <!--info-->
+
+<div class="inputs">
+
+<div class="container">
+  <ul>
+  <form id="courseForm">
+  <table class="course-table" id="course-table">
+    <tr>
+      <td colspan="3">Przedmioty obowiązkowe, część pisemna</td>
+    </tr>
+    <tr id="clearForm">
+      <td><input type="reset"></td>
+    </tr>
+    <tr>
+      <td>Przedmiot</td><td>Poziom</td><td>Wynik w %</td>
+    </tr>
+    <tr>
+      <td>Język polski</td><td>Podstawowy</td><td><label><input type="text" class="checkIfCorrect courseInput" maxlength="3" size="3" min="0" max="100" id="plBasic"/> %</label></td>
+    </tr>
+    <tr>
+      <td>Matematyka</td><td>Podstawowy</td><td><label><input type="text" class="checkIfCorrect courseInput" maxlength="3" size="3" min="0" max="100" id="mathBasic"/> %</label></td>
+    </tr>
+    <tr>
+      <td>Język obcy nowożytny</td><td>Podstawowy</td><td><label><input type="text"  class="checkIfCorrect courseInput"maxlength="3" size="3" min="0" max="100" id="langBasic"/> %</label></td>
+    </tr>
+    <tr>
+      <td id="tdAlert" colspan="2">*Uzupełnij powyższe wyniki poprawnie!</td><td></td>
+    </tr>
+    <tr>
+      <td colspan="3">Przedmioty dodatkowe, część pisemna</td>
+    </tr>
+    <tr>
+      <td>Biologia</td><td>Rozszerzony</td><td><label><input type="text" maxlength="3" size="3" min="0" max="100" type="number" id="biolExt" class="courseInput"/> %</label></td>
+    </tr>
+    <tr>
+      <td>Chemia</td><td>Rozszerzony</td><td><label><input type="text" maxlength="3" size="3" min="0" max="100" type="number" id="chemExt" class="courseInput"/> %</label></td>
+    </tr>
+    <tr>
+      <td>Filozofia</td><td>Rozszerzony</td><td><label><input type="text" maxlength="3" size="3" min="0" max="100" type="number" id="philExt" class="courseInput"/> %</label></td>
+    </tr>
+    <tr>
+      <td>Fizyka</td><td>Rozszerzony</td><td><label><input type="text" maxlength="3" size="3" min="0" max="100" type="number" id="physExt" class="courseInput"/> %</label></td>
+    </tr>
+    <tr>
+      <td>Geografia</td><td>Rozszerzony</td><td><label><input type="text" maxlength="3" size="3" min="0" max="100" type="number" id="geoExt" class="courseInput"/> %</label></td>
+    </tr>
+    <tr>
+      <td>Historia</td><td>Rozszerzony</td><td><label><input type="text" maxlength="3" size="3" min="0" max="100" type="number" id="histExt" class="courseInput"/> %</label></td>
+    </tr>
+    <tr>
+      <td>Informatyka</td><td>Rozszerzony</td><td><label><input type="text" maxlength="3" size="3" min="0" max="100" type="number" id="csciExt" class="courseInput"/> %</label></td>
+    </tr>
+    <tr>
+      <td>Język obcy nowożytny</td><td>Rozszerzony</td><td><label><input type="text" maxlength="3" size="3" min="0" max="100" type="number" id="langExt" class="courseInput"/> %</label></td>
+    </tr>
+    <tr>
+      <td>Język polski</td><td>Rozszerzony</td><td><label><input type="text" maxlength="3" size="3" min="0" max="100" type="number" id="plExt" class="courseInput"/> %</label></td>
+    </tr>
+    <tr>
+      <td>Matematyka</td><td>Rozszerzony</td><td><label><input type="text" maxlength="3" size="3" min="0" max="100" type="number" id="mathExt" class="courseInput"/> %</label></td>
+    </tr>
+    <tr>
+      <td>WOS</td><td>Rozszerzony</td><td><label><input type="text" maxlength="3" size="3" min="0" max="100" type="number" id="wosExt" class="courseInput"/> %</label></td>
+    </tr>
+
+  </table>
+  </form>
+  </ul>
+</div>
+
+</div> <!--inputs-->
+
+<div class="scores">
+  
+  <span id="scoresOutput"></span>
+  
+</div> <!--scores-->
+
+<div class="courses">
+  
+</div> <!--courses-->
+
+<div class="how-to">
+  
+</div> <!--how-to-->
+
+<script type="text/javascript" src="sc.js"></script>
+
+</body>
+</html>
