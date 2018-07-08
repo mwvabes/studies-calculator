@@ -4,6 +4,7 @@ var courseTable = document.querySelector("#course-table");
 var scoresOutput = document.querySelector("#scoresOutput");
 var clearForm = document.querySelector("#clearForm");
 var courseInput = document.querySelectorAll(".courseInput");
+var clearFormInput = document.querySelector("#clearFormInput");
 
 var plBasic = document.querySelector("#plBasic");
 var mathBasic = document.querySelector("#mathBasic");
@@ -58,7 +59,7 @@ function filledStatusReset() {
   filledStatus = 0;
   tdAlert.style.color = "green";
   setTimeout(function() {
-      tdAlert.style.display = "none";
+      trAlert.style.display = "none";
   }, 2000);
 }
 
@@ -66,12 +67,13 @@ function filledStatusReset() {
 function unFilled(input) {
   var cell = input.parentNode.parentNode;
   var tdAlert = document.querySelector("#tdAlert");
+  var trAlert = document.querySelector("#trAlert");
   if (input.value == "") 
   {
     cell.style.color = "#FFF";
     cell.style.backgroundColor = "#ff5c5c";
     tdAlert.style.color = "";
-    tdAlert.style.display = "table-cell";
+    trAlert.style.display = "table-row";
     tdAlert.style.value = "*Uzupełnij wartości poprawnie";
     filledStatus++;
   } 
@@ -86,23 +88,10 @@ function unFilled(input) {
     tdAlert.style.color = "green";
     setTimeout(function() 
     {
-      tdAlert.style.display = "none";
+      trAlert.style.display = "none";
     }, 800);
   } 
 }
-
-/*function checkIfAnythingFilled() {
-  var ifFilled = function checkSpecificFilled() {
-    for (i = 0; i < courseInput.length; i++) {
-      if (courseInput[i].value != "") return true;
-      else return false;
-  }
-    
-  if (ifFilled) courseResetTr.style.display = "table-cell";
-  else courseResetTr.style.display = "";
-    
-  }
-}*/
 
 document.addEventListener('DOMContentLoaded', function() {
   courseTable.addEventListener("keydown", function() {
@@ -138,8 +127,19 @@ langBasic.addEventListener("keyup", function() {
   unFilled(langBasic);
 }, false);*/
 
-clearForm.addEventListener("click", function() {
+clearFormInput.addEventListener("click", function() {
+  clearFormInput.style.borderColor = "green";
+  clearFormInput.style.backgroundColor = "green";
+  clearFormInput.style.color = "white";
   filledStatusReset();
+  
+  setTimeout(function() 
+  {
+  clearFormInput.style.borderColor = "";
+  clearFormInput.style.backgroundColor = "";
+  clearFormInput.style.color = "";
+  }, 400);
+
 }, false);
 
 /*courseInput.addEventListener("blur", function() {

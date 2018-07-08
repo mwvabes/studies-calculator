@@ -5,7 +5,7 @@
   <title>PRz | Kalkulator by Vabes</title>
   
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,600i,900" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700" rel="stylesheet"> 
 
 </head>
 <body>
@@ -22,14 +22,15 @@
   <ul>
   <form id="courseForm">
   <table class="course-table" id="course-table">
-    <tr>
-      <td colspan="3">Przedmioty obowiązkowe, część pisemna</td>
-    </tr>
     <tr id="clearForm">
-      <td><input type="reset"></td>
+      <td colspan="1"></td>
+      <td colspan="2"><input type="reset" value="Wyczyść pola" id="clearFormInput"></td>
     </tr>
     <tr>
       <td>Przedmiot</td><td>Poziom</td><td>Wynik w %</td>
+    </tr>
+    <tr>
+      <td colspan="3">Przedmioty obowiązkowe, część pisemna</td>
     </tr>
     <tr>
       <td>Język polski</td><td>Podstawowy</td><td><label><input type="text" class="checkIfCorrect courseInput" maxlength="3" size="3" min="0" max="100" id="plBasic"/> %</label></td>
@@ -40,7 +41,7 @@
     <tr>
       <td>Język obcy nowożytny</td><td>Podstawowy</td><td><label><input type="text"  class="checkIfCorrect courseInput"maxlength="3" size="3" min="0" max="100" id="langBasic"/> %</label></td>
     </tr>
-    <tr>
+    <tr id="trAlert">
       <td id="tdAlert" colspan="2">*Uzupełnij powyższe wyniki poprawnie!</td><td></td>
     </tr>
     <tr>

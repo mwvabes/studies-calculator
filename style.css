@@ -1,5 +1,5 @@
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto', 'Arial', sans-serif;
   font-size: 16px;
   color: #4a4a4a; }
 
@@ -37,6 +37,13 @@ body {
   border-collapse: collapse;
   padding: 10px; }
 
+.course-table > tbody > tr:nth-child(2), .course-table > tbody > tr:nth-child(3), .course-table > tbody > tr:nth-child(8) {
+  color: #0062ff;
+  font-weight: 700; }
+
+.course-table > tbody > tr:nth-child(1), .course-table > tbody > tr:nth-child(2), .course-table > tbody > tr:nth-child(3), .course-table > tbody > tr:nth-child(7), .course-table > tbody > tr:nth-child(8) {
+  background-color: #f4f4f4; }
+
 .row {
   clear: both; }
 
@@ -48,11 +55,40 @@ body {
   display: inline-block; }
 
 #tdAlert {
-  display: none;
   font-size: 12px;
   color: #8e0000; }
 
+#trAlert {
+  display: none; }
+
 #courseResetTr {
   display: none; }
+
+#clearFormInput {
+  -webkit-transition: all 100ms linear;
+  -moz-transition: all 100ms linear;
+  -o-transition: all 100ms linear;
+  -ms-transition: all 100ms linear;
+  transition: all 100ms linear; }
+
+#clearForm > td:nth-child(2) {
+  text-align: center; }
+
+#clearFormInput {
+  font-size: 14px;
+  background-color: #f4f4f4;
+  border-radius: 14px;
+  border: 1px solid #8e0000;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #8e0000;
+  cursor: pointer; }
+
+.clearFormInputGreen {
+  background-color: #00b200;
+  border-color: #00b200;
+  color: #FFF; }
 
 /*# sourceMappingURL=style.css.map */
