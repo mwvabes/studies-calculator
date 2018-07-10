@@ -2,6 +2,11 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
+  <meta name="description" content="Kalkulator punktów rekrutacyjnych, Politechnika Rzeszowska">
+  <meta name="keywords" content="kalkulator,punktów,politechnika,rzeszowska,rekrutacja,obliczenie">
+  <meta name="author" content="vabes.pl">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <title>PRz | Kalkulator by Vabes</title>
   
   <link rel="stylesheet" href="style.css" />
@@ -28,7 +33,7 @@
     <tr>
       <td>Przedmiot</td><td>Poziom</td><td>Wynik w %</td>
     </tr>
-    <tr>
+    <tr class="infoInput infoInputCourseCategory">
       <td colspan="3">Przedmioty obowiązkowe, część pisemna</td>
     </tr>
     <tr>
@@ -43,7 +48,7 @@
     <tr id="trAlert">
       <td id="tdAlert" colspan="2"><span id="spanAlert">*Uzupełnij powyższe wyniki poprawnie!</span></td><td></td>
     </tr>
-    <tr>
+    <tr class="infoInput infoInputCourseCategory">
       <td colspan="3">Przedmioty dodatkowe, część pisemna</td>
     </tr>
     <tr>
@@ -79,6 +84,10 @@
     <tr>
       <td>WOS</td><td>Rozszerzony</td><td><label><input type="text" maxlength="3" size="3" min="0" max="100" id="wosExt" class="courseInput"/> %</label></td>
     </tr>
+    <tr class="infoInput infoInputCourseNotCount">
+      <td colspan="3">Wyniki z części ustnej nie są brane pod uwagę na tej uczelni</td>
+    </tr>
+    
 
   </table>
   </form>
@@ -106,19 +115,19 @@
         <td>1</td><td>WBISIA</td><td colspan="4">WYDZIAŁ BUDOWNICTWA, INŻYNIERII ŚRODOWISKA I ARCHITEKTURY</td>
       </tr>
       <tr class="outputZero wbisia" id="wbisiaArchitektura">
-        <td>1.1</td><td>Architektura</td><td class="outputField">--</td><td></td><td></td><td></td>
+        <td>1.1</td><td>Architektura<span class="additionalExam"> *Obowiązuje egzamin wstępny</span></td><td>--</td><td>445</td><td>465</td><td>578</td>
       </tr>
       <tr class="outputZero wbisia" id="wbisiaBudownictwo">
-        <td>1.2</td><td>Budownictwo</td><td class="outputField">--</td><td></td><td></td><td></td>
+        <td>1.2</td><td>Budownictwo</td><td>--</td><td>188</td><td>153</td><td>203</td>
       </tr>
       <tr class="outputZero wbisia" id="wbisiaOchronaSrodowiska">
-        <td>1.3</td><td>Ochrona Środowiska</td><td class="outputField">--</td><td></td><td></td><td></td>
+        <td>1.3</td><td>Ochrona Środowiska</td><td>--</td><td>120</td><td>107</td><td>174</td>
       </tr>
       <tr class="outputZero wbisia" id="wbisiaInzynieriaSrodowiska">
-        <td>1.4</td><td>Inżynieria Środowiska</td><td class="outputField">--</td><td></td><td></td><td></td>
+        <td>1.4</td><td>Inżynieria Środowiska</td><td>--</td><td>119</td><td>128</td><td>106</td>
       </tr>
       <tr class="outputZero wbisia" id="wbisiaBiogospodarka">
-        <td>1.5</td><td>Biogospodarka</td><td class="outputField">--</td><td></td><td></td><td></td>
+        <td>1.5</td><td>Biogospodarka</td><td>--</td><td colspan="3">Brak informacji o progach</td>
       </tr>
       
       <tr class="scoresYearRow">
@@ -131,22 +140,22 @@
         <td>2</td><td>WBMIL</td><td colspan="4">WYDZIAŁ BUDOWY MASZYN I LOTNICTWA</td>
       </tr>
       <tr class="outputZero wbmil wbmilInzynieriaMaterialowa" id="wbmilInzynieriaMaterialowa">
-        <td>2.1</td><td>Inżynieria materiałowa</td><td id="wbmilInzynieriaMaterialowa">--</td><td></td><td></td><td></td>
+        <td>2.1</td><td>Inżynieria materiałowa</td><td>--</td><td>134</td><td>319,5</td><td>152</td>
       </tr>
       <tr class="outputZero wbmil wbmilLotnictwoIKosmonautyka" id="wbmilLotnictwoIKosmonautyka">
-        <td>2.2</td><td>Lotnictwo i kosmonautyka</td><td id="">--</td><td></td><td></td><td></td>
+        <td>2.2</td><td>Lotnictwo i kosmonautyka</td><td>--</td><td>272</td><td>280</td><td>344</td>
       </tr>
       <tr class="outputZero wbmil wbmilMechanikaIBudowaMaszyn" id="wbmilMechanikaIBudowaMaszyn">
-        <td>2.3</td><td>Mechanika i budowa maszyn</td><td id="">--</td><td></td><td></td><td></td>
+        <td>2.3</td><td>Mechanika i budowa maszyn (Rzeszów)</td><td>--</td><td>197</td><td>175</td><td>192</td>
       </tr>
       <tr class="outputZero wbmil wbmilMechatronika" id="wbmilMechatronika">
-        <td>2.4</td><td>Mechatronika</td><td id="">--</td><td></td><td></td><td></td>
+        <td>2.4</td><td>Mechatronika</td><td>--</td><td>198</td><td>155</td><td>231</td>
       </tr>
       <tr class="outputZero wbmil wbmilTransport" id="wbmilTransport">
-        <td>2.5</td><td>Transport</td><td id="">--</td><td></td><td></td><td></td>
+        <td>2.5</td><td>Transport</td><td>--</td><td>103</td><td>120</td><td>162</td>
       </tr>
       <tr class="outputZero wbmil wbmilZarzadzanieIInzynieriaProdukcji" id="wbmilZarzadzanieIInzynieriaProdukcji">
-        <td>2.6</td><td>Zarządzanie i inżynieria produkcji</td><td id="">--</td><td></td><td></td><td></td>
+        <td>2.6</td><td>Zarządzanie i inżynieria produkcji (Rzeszów)</td><td>--</td><td>168</td><td>140</td><td>210</td>
       </tr>
       
       <tr class="scoresYearRow">
@@ -159,13 +168,13 @@
         <td>3</td><td>WCH</td><td colspan="4">WYDZIAŁ CHEMICZNY</td>
       </tr>
       <tr class="outputZero wch wchBiotechnologia" id="wchBiotechnologia">
-        <td>3.1</td><td>Biotechnologia</td><td id="wchBiotechnologia">--</td><td></td><td></td><td></td>
+        <td>3.1</td><td>Biotechnologia</td><td>--</td><td>114</td><td>120</td><td>159</td>
       </tr>
       <tr class="outputZero wch wchInzynieriaChemiczna" id="wchInzynieriaChemiczna">
-        <td>3.2</td><td>Inżynieria chemiczna i procesowa</td><td id="wchInzynieriaChemicznaIProcesowa">--</td><td></td><td></td><td></td>
+        <td>3.2</td><td>Inżynieria chemiczna i procesowa</td><td>--</td><td>101</td><td>116</td><td>178</td>
       </tr>
       <tr class="outputZero wch wchTechnologiaChemiczna" id="wchTechnologiaChemiczna">
-        <td>3.3</td><td>Technologia Chemiczna</td><td id="wchTechnologiaChemiczna">--</td><td></td><td></td><td></td>
+        <td>3.3</td><td>Technologia Chemiczna</td><td>--</td><td>109</td><td>108</td><td>130</td>
       </tr>
       
       <tr class="scoresYearRow">
@@ -178,19 +187,19 @@
         <td>4</td><td>WEII</td><td colspan="4">WYDZIAŁ ELEKTROTECHNIKI I INFORMATYKI</td>
       </tr>
       <tr class="outputZero weii weiiAutomatykaIRobotyka" id="weiiAutomatykaIRobotyka">
-        <td>4.1</td><td>Automatyka i robotyka</td><td id="weiiAutomatykaIRobotyka">--</td><td></td><td></td><td></td>
+        <td>4.1</td><td>Automatyka i robotyka</td><td id="weiiAutomatykaIRobotyka">--</td><td>244</td><td>244</td><td>311</td>
       </tr>
       <tr class="outputZero weii weiiElektronikaITelekomunikacja" id="weiiElektronikaITelekomunikacja">
-        <td>4.2</td><td>Elektronika i telekomunikacja</td><td id="weiiElektronikaITelekomunikacja">--</td><td></td><td></td><td></td>
+        <td>4.2</td><td>Elektronika i telekomunikacja</td><td>--</td><td>131</td><td>121</td><td>184</td>
       </tr>
       <tr class="outputZero weii weiiElektrotechnika" id="weiiElektrotechnika">
-        <td>4.3</td><td>Elektrotechnika</td><td id="weiiElektrotechnika">--</td><td></td><td></td><td></td>
+        <td>4.3</td><td>Elektrotechnika</td><td>--</td><td>123</td><td>125</td><td>212</td>
       </tr>
       <tr class="outputZero weii weiiEnergetyka" id="weiiEnergetyka">
-        <td>4.4</td><td>Energetyka</td><td id="weiiEnergetyka">--</td><td></td><td></td><td></td>
+        <td>4.4</td><td>Energetyka</td><td>--</td><td>133</td><td>112</td><td>193</td>
       </tr>
       <tr class="outputZero weii weiiInformatyka" id="weiiInformatyka">
-        <td>4.5</td><td>Informatyka</td><td id="weiiInformatyka">--</td><td></td><td></td><td></td>
+        <td>4.5</td><td>Informatyka</td><td>--</td><td>277</td><td>288</td><td>356</td>
       </tr>
       
       <tr class="scoresYearRow">
@@ -203,10 +212,10 @@
         <td>5</td><td>WMIFS</td><td colspan="4">WYDZIAŁ MATEMATYKI I FIZYKI STOSOWANEJ</td>
       </tr>
       <tr class="outputZero wmifs wmifsInzynieriaMedyczna" id="wmifsInzynieriaMedyczna">
-        <td>5.1</td><td>Inżynieria medyczna</td><td id="wmifsInzynieriaMedyczna">--</td><td></td><td></td><td></td>
+        <td>5.1</td><td>Inżynieria medyczna</td><td>--</td><td>90</td><td>152</td><td>120</td>
       </tr>
       <tr class="outputZero wmifs wmifsMatematyka" id="wmifsMatematyka">
-        <td>5.1</td><td>Matematyka</td><td id="wmifsMatematyka">--</td><td></td><td></td><td></td>
+        <td>5.2</td><td>Matematyka</td><td>--</td><td>148</td><td>148</td><td>134</td>
       </tr>
       
       <tr class="scoresYearRow">
@@ -219,10 +228,10 @@
         <td>6</td><td>WMT</td><td colspan="4">WYDZIAŁ MECHANICZNO - TECHNOLOGICZNY</td>
       </tr>
       <tr class="outputZero wmt wmtMechanikaIBudowaMaszyn" id="wmtMechanikaIBudowaMaszyn">
-        <td>6.1</td><td>Mechanika i budowa maszyn</td><td id="wmtMechanikaIBudowaMaszyn">--</td><td></td><td></td><td></td>
+        <td>6.1</td><td>Mechanika i budowa maszyn (Rzeszów)</td><td>--</td><td>197</td><td>175</td><td>192</td>
       </tr>
       <tr class="outputZero wmt wmtZarzadzanieIInzynieriaProdukcji" id="wmtZarzadzanieIInzynieriaProdukcji">
-        <td>6.2</td><td>Zarządzanie i inżynieria produkcji</td><td id="wmtZarzadzanieIInzynieriaProdukcji">--</td><td></td><td></td><td></td>
+        <td>6.2</td><td>Zarządzanie i inżynieria produkcji</td><td>--</td><td>168</td><td>140</td><td>210</td>
       </tr>
       
       <tr class="scoresYearRow">
@@ -235,19 +244,19 @@
         <td>7</td><td>WZ</td><td colspan="4">WYDZIAŁ ZARZĄDZANIA</td>
       </tr>
       <tr class="outputZero wz wzBezpieczenstwoWewnetrzne" id="wzBezpieczenstwoWewnetrzne">
-        <td>7.1</td><td>Bezpieczeństwo wewnętrzne</td><td id="wzBezpieczenstwoWewnetrzne">--</td><td></td><td></td><td></td>
+        <td>7.1</td><td>Bezpieczeństwo wewnętrzne</td><td>--</td><td>125</td><td>97</td><td>178,5</td>
       </tr>
       <tr class="outputZero wz wzFinanseIRachunkowosc" id="wzFinanseIRachunkowosc">
-        <td>7.2</td><td>Finanse i rachunkowość</td><td id="wzFinanseIRachunkowosc">--</td><td></td><td></td><td></td>
+        <td>7.2</td><td>Finanse i rachunkowość</td><td>--</td><td>197</td><td>207</td><td>326</td>
       </tr>
       <tr class="outputZero wz wzLogistyka" id="wzLogistyka">
-        <td>7.3</td><td>Logistyka</td><td id="wzLogistyka">--</td><td></td><td></td><td></td>
+        <td>7.3</td><td>Logistyka</td><td>--</td><td>163</td><td>186</td><td>321</td>
       </tr>
       <tr class="outputZero wz wzSport" id="wzSport">
-        <td>7.4</td><td>Sport</td><td id="wzSport">--</td><td colspan="3">Brak informacji</td>
+        <td>7.4</td><td>Sport</td><td colspan="4">Brak informacji o sposobie liczenia punktów i o progach</td>
       </tr>
       <tr class="outputZero wz wzZarzadzanie" id="wzZarzadzanie">
-        <td>7.5</td><td>Zarządzanie</td><td id="wzZarzadzanie">--</td><td></td><td></td><td></td>
+        <td>7.5</td><td>Zarządzanie</td><td>--</td><td>98</td><td>50</td><td>244</td>
       </tr>
       
       <tr class="scoresYearRow">

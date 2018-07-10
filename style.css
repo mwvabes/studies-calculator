@@ -19,6 +19,8 @@ body {
 .course-table, td {
   border: 1px solid #e2e2e2;
   border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
   padding: 10px; }
 
 .courseTableInput tr:nth-of-type(n+3) td:nth-child(2) {
@@ -44,12 +46,17 @@ body {
 .courseTableInput > tbody > tr:nth-child(1), .courseTableInput > tbody > tr:nth-child(2), .courseTableInput > tbody > tr:nth-child(3), .courseTableInput > tbody > tr:nth-child(7), .courseTableInput > tbody > tr:nth-child(8) {
   background-color: #f4f4f4; }
 
-.courseTableInput > tbody > tr:nth-child(3) > td, .courseTableInput > tbody > tr:nth-child(8) > td {
+.infoInput td {
   font-size: 0.75rem;
   padding-top: 5px;
   padding-bottom: 5px;
-  background-color: #e2e2e2;
+  background-color: #e2e2e2; }
+
+.infoInputCourseCategory td {
   color: #00b200; }
+
+.infoInputCourseNotCount td {
+  color: #8e0000; }
 
 .row {
   clear: both; }
@@ -125,7 +132,20 @@ body {
   background-color: #ebebeb;
   border-bottom: 5px solid #e2e2e2; }
 
-.wzSport td {
-  background-color: #f4f4f4; }
+.wzSport td:nth-child(3) {
+  font-size: 0.75rem;
+  color: #adadad; }
+
+.outRed {
+  color: #bc0101; }
+
+.outGreen {
+  color: #14b90d;
+  font-weight: bold; }
+
+.additionalExam {
+  font-size: 0.75rem;
+  color: #adadad;
+  vertical-align: middle; }
 
 /*# sourceMappingURL=style.css.map */

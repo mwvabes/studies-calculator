@@ -22,18 +22,55 @@ var csciExt = document.querySelector("#csciExt");
 var wosExt = document.querySelector("#wosExt");
 var coursesArr = [plBasic, mathBasic, langBasic, plExt, mathExt, langExt, biolExt, chemExt, philExt, physExt, geoExt, histExt, csciExt, wosExt];
 
+var academics = ["wbisiaArchitektura", "wbisiaBudownictwo", "wbisiaOchronaSrodowiska", "wbisiaInzynieriaSrodowiska", "wbmilInzynieriaMaterialowa", "wbmilLotnictwoIKosmonautyka", "wbmilMechanikaIBudowaMaszyn", "wbmilMechatronika", "wbmilTransport", "wbmilZarzadzanieIInzynieriaProdukcji", "wchBiotechnologia", "wchInzynieriaChemiczna", "wchTechnologiaChemiczna", "weiiAutomatykaIRobotyka", "weiiElektronikaITelekomunikacja", "weiiElektrotechnika", "weiiEnergetyka", "weiiInformatyka", "wmifsInzynieriaMedyczna", "wmifsMatematyka", "wmtMechanikaIBudowaMaszyn", "wmtZarzadzanieIInzynieriaProdukcji", "wzBezpieczenstwoWewnetrzne", "wzFinanseIRachunkowosc", "wzLogistyka", "wzZarzadzanie"];
+
+var yearColumns = 3;
+
 //for (i = 0; i < coursesArr.length; i++) {
 //  if (coursesArr[i].value === "") {
 //    courseInput[i].value = 0;
 //  }
 //}
 
+function colourScores(courseccc) {
+  let courseForColour = document.getElementById(courseccc);
+  let score = parseFloat(courseForColour.childNodes[3].innerHTML);
+  let scores = [];
+  
+  let i;
+  let j;
+  
+  for (i = 4; i <= (3 + yearColumns); i++) {
+    scores[i] = parseFloat(courseForColour.childNodes[i].innerHTML);
+  }
+  
+  for (j = 4; j < scores.length; j++) {
+  
+    if (score == 0 || isNaN(score)) {
+      courseForColour.childNodes[j].className = "";
+    }
+    else if (score < scores[j]) {
+      courseForColour.childNodes[j].className = "outRed"; 
+    }
+    else if (score >= scores[j]) {
+      courseForColour.childNodes[j].className = "outGreen";
+    }
+  }
+}
+
+function colours() {
+  let i;
+  for (i = 0; i < academics.length; i++) {
+    colourScores(academics[i]);
+  }
+}
+
 function plBB() {
   let ret;
   if (plBasic.value > plExt.value) {
-    ret = parseInt(plBasic.value);
+    ret = parseFloat(plBasic.value);
   } else {
-    ret = parseInt(plExt.value);
+    ret = parseFloat(plExt.value);
   }
   if (isNaN(ret)) ret = 0;
   return ret;
@@ -42,9 +79,9 @@ function plBB() {
 function langBEh() {
   let ret;
   if (langBasic.value > (1.5*langExt.value)) {
-    ret = parseInt(langBasic.value);
+    ret = parseFloat(langBasic.value);
   } else {
-    ret = parseInt(1.5*langExt.value);
+    ret = parseFloat(1.5*langExt.value);
   }
   if (isNaN(ret)) ret = 0;
   return ret;
@@ -53,22 +90,22 @@ function langBEh() {
 function mathBE() {
   let ret;
   if (mathBasic.value > (2*mathExt.value)) {
-      ret = parseInt(mathBasic.value);
+      ret = parseFloat(mathBasic.value);
       } else {
-      ret = parseInt(2*mathExt.value);
+      ret = parseFloat(2*mathExt.value);
       }
   if (isNaN(ret)) ret = 0;
   return ret;
 }
       
 function histE() {
-    let ret = parseInt(2*histExt.value);
+    let ret = parseFloat(2*histExt.value);
     if (isNaN(ret)) ret = 0;
     return ret;
 }
 
 function physE() {
-    let ret = parseInt(2*physExt.value);
+    let ret = parseFloat(2*physExt.value);
     if (isNaN(ret)) ret = 0;
     return ret;
 }
@@ -76,9 +113,9 @@ function physE() {
 function physCsci() {
   let ret;
   if ((2*physExt.value) > (2*csciExt.value)) {
-      ret = parseInt(2*physExt.value);
+      ret = parseFloat(2*physExt.value);
       } else {
-      ret = parseInt(2*csciExt.value);
+      ret = parseFloat(2*csciExt.value);
       }
   if (isNaN(ret)) ret = 0;
   return ret;
@@ -87,9 +124,9 @@ function physCsci() {
 function physChem() {
   let ret;
   if ((2*physExt.value) > (2*chemExt.value)) {
-      ret = parseInt(2*physExt.value);
+      ret = parseFloat(2*physExt.value);
       } else {
-      ret = parseInt(2*chemExt.value);
+      ret = parseFloat(2*chemExt.value);
       }
   if (isNaN(ret)) ret = 0;
   return ret;
@@ -98,9 +135,9 @@ function physChem() {
 function chePhys() {
   let ret;
   if ((2*chemExt.value) > (2*physExt.value)) {
-      ret = parseInt(2*chemExt.value);
+      ret = parseFloat(2*chemExt.value);
       } else {
-      ret = parseInt(2*physExt.value);
+      ret = parseFloat(2*physExt.value);
       }
   if (isNaN(ret)) ret = 0;
   return ret;
@@ -166,9 +203,9 @@ function bioChePhysCsci() {
 function plBBD() {
   let ret;
   if (plBasic.value > (2*plExt.value)) {
-    ret = parseInt(plBasic.value);
+    ret = parseFloat(plBasic.value);
   } else {
-    ret = parseInt(2*plExt.value);
+    ret = parseFloat(2*plExt.value);
   }
   if (isNaN(ret)) ret = 0;
   return ret;
@@ -177,9 +214,9 @@ function plBBD() {
 function langBED() {
   let ret;
   if (langBasic.value > (2*langExt.value)) {
-    ret = parseInt(langBasic.value);
+    ret = parseFloat(langBasic.value);
   } else {
-    ret = parseInt(2*langExt.value);
+    ret = parseFloat(2*langExt.value);
   }
   if (isNaN(ret)) ret = 0;
   return ret;
@@ -188,9 +225,9 @@ function langBED() {
 function mathBED() {
   let ret;
   if (mathBasic.value > (4*mathExt.value)) {
-    ret = parseInt(mathBasic.value);
+    ret = parseFloat(mathBasic.value);
   } else {
-    ret = parseInt(4*mathExt.value);
+    ret = parseFloat(4*mathExt.value);
   }
   if (isNaN(ret)) ret = 0;
   return ret;
@@ -199,9 +236,9 @@ function mathBED() {
 function physCsciD() {
   let ret;
   if (4*(physExt.value) > (4*csciExt.value)) {
-    ret = parseInt(4*physExt.value);
+    ret = parseFloat(4*physExt.value);
   } else {
-    ret = parseInt(4*csciExt.value);
+    ret = parseFloat(4*csciExt.value);
   }
   if (isNaN(ret)) ret = 0;
   return ret;
@@ -224,9 +261,9 @@ function chePhysCsciD() {
 function wosGeoHalf() {
   let ret;
   if (1.5*(wosExt.value) > (1.5*geoExt.value)) {
-    ret = parseInt(1.5*wosExt.value);
+    ret = parseFloat(1.5*wosExt.value);
   } else {
-    ret = parseInt(1.5*geoExt.value);
+    ret = parseFloat(1.5*geoExt.value);
   }
   if (isNaN(ret)) ret = 0;
   return ret;
@@ -235,9 +272,9 @@ function wosGeoHalf() {
 function geoHistHalf() {
   let ret;
   if (1.5*(geoExt.value) > (1.5*histExt.value)) {
-    ret = parseInt(1.5*geoExt.value);
+    ret = parseFloat(1.5*geoExt.value);
   } else {
-    ret = parseInt(1.5*histExt.value);
+    ret = parseFloat(1.5*histExt.value);
   }
   if (isNaN(ret)) ret = 0;
   return ret;
@@ -246,9 +283,9 @@ function geoHistHalf() {
 function physGeo() {
   let ret;
   if (2*(physExt.value) > (2*geoExt.value)) {
-    ret = parseInt(2*physExt.value);
+    ret = parseFloat(2*physExt.value);
   } else {
-    ret = parseInt(2*geoExt.value);
+    ret = parseFloat(2*geoExt.value);
   }
   if (isNaN(ret)) ret = 0;
   return ret;
@@ -567,7 +604,7 @@ function score() {
   wzBezpieczenstwoWewnetrzne();
   wzFinanseIRachunkowosc();
   wzLogistyka();
-//  sport
+ //  sport
   wzZarzadzanie();
 }
 
@@ -613,6 +650,10 @@ function filledStatusReset() {
       clearFormInput.classList.remove = "clearFormInputGreen";
       clearFormInput.classList.add = "clearFormInputRed";
   }, 900);
+  setTimeout(function() {
+        score();
+      colours();
+  }, 100);
 }
 
 //Checks if input is filled correctly
@@ -659,14 +700,9 @@ document.addEventListener('DOMContentLoaded', function() {
 }, false);
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-  courseTable.addEventListener("blur", function() {
-  score();
-}, false);
-});
-
 courseTable.addEventListener("keyup", function() {
   check();
+  colours();
 }, false);
 
 plBasic.addEventListener("blur", function() {
@@ -697,12 +733,22 @@ clearFormInput.addEventListener("click", function() {
   filledStatusReset();
   setTimeout(function() {
       score();
-  }, 10);
+  }, 100);
 }, false);
 
 /*courseInput.addEventListener("blur", function() {
   checkIfAnythingFilled();
 }, false);*/
-  
 
-score();
+
+document.addEventListener('DOMContentLoaded', function() {
+  courseTable.addEventListener("blur", function() {
+  score();
+}, false);
+  
+  score();
+  colours();
+}, false);
+
+
+
