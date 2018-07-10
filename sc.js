@@ -22,9 +22,553 @@ var csciExt = document.querySelector("#csciExt");
 var wosExt = document.querySelector("#wosExt");
 var coursesArr = [plBasic, mathBasic, langBasic, plExt, mathExt, langExt, biolExt, chemExt, philExt, physExt, geoExt, histExt, csciExt, wosExt];
 
+//for (i = 0; i < coursesArr.length; i++) {
+//  if (coursesArr[i].value === "") {
+//    courseInput[i].value = 0;
+//  }
+//}
+
+function plBB() {
+  let ret;
+  if (plBasic.value > plExt.value) {
+    ret = parseInt(plBasic.value);
+  } else {
+    ret = parseInt(plExt.value);
+  }
+  if (isNaN(ret)) ret = 0;
+  return ret;
+}
+
+function langBEh() {
+  let ret;
+  if (langBasic.value > (1.5*langExt.value)) {
+    ret = parseInt(langBasic.value);
+  } else {
+    ret = parseInt(1.5*langExt.value);
+  }
+  if (isNaN(ret)) ret = 0;
+  return ret;
+}
+
+function mathBE() {
+  let ret;
+  if (mathBasic.value > (2*mathExt.value)) {
+      ret = parseInt(mathBasic.value);
+      } else {
+      ret = parseInt(2*mathExt.value);
+      }
+  if (isNaN(ret)) ret = 0;
+  return ret;
+}
+      
+function histE() {
+    let ret = parseInt(2*histExt.value);
+    if (isNaN(ret)) ret = 0;
+    return ret;
+}
+
+function physE() {
+    let ret = parseInt(2*physExt.value);
+    if (isNaN(ret)) ret = 0;
+    return ret;
+}
+
+function physCsci() {
+  let ret;
+  if ((2*physExt.value) > (2*csciExt.value)) {
+      ret = parseInt(2*physExt.value);
+      } else {
+      ret = parseInt(2*csciExt.value);
+      }
+  if (isNaN(ret)) ret = 0;
+  return ret;
+}
+
+function physChem() {
+  let ret;
+  if ((2*physExt.value) > (2*chemExt.value)) {
+      ret = parseInt(2*physExt.value);
+      } else {
+      ret = parseInt(2*chemExt.value);
+      }
+  if (isNaN(ret)) ret = 0;
+  return ret;
+}
+
+function chePhys() {
+  let ret;
+  if ((2*chemExt.value) > (2*physExt.value)) {
+      ret = parseInt(2*chemExt.value);
+      } else {
+      ret = parseInt(2*physExt.value);
+      }
+  if (isNaN(ret)) ret = 0;
+  return ret;
+}
+
+function bioChePhys() {
+  let arr = [];
+  arr.push(biolExt);
+  arr.push(chemExt);
+  arr.push(physExt);
+  
+  ret = arr[0];
+  for (i = 1; i <= arr.length; i++) {
+    if (arr [i] > arr[i-1]) ret = arr[i];
+  }
+  if (isNaN(ret)) ret = 0;
+  return ret;
+}
+
+function bioCheGeo() {
+  let arr = [];
+  arr.push(biolExt);
+  arr.push(chemExt);
+  arr.push(geoExt);
+  
+  ret = arr[0];
+  for (i = 1; i <= arr.length; i++) {
+    if (arr [i] > arr[i-1]) ret = arr[i];
+  }
+  if (isNaN(ret)) ret = 0;
+  return ret;
+}
+
+function chePhysCsci() {
+  let arr = [];
+  arr.push(chemExt);
+  arr.push(physExt);
+  arr.push(csciExt);
+  
+  ret = arr[0];
+  for (i = 1; i <= arr.length; i++) {
+    if (arr [i] > arr[i-1]) ret = arr[i];
+  }
+  if (isNaN(ret)) ret = 0;
+  return ret;
+}
+
+function bioChePhysCsci() {
+  let arr = [];
+  arr.push(biolExt);
+  arr.push(chemExt);
+  arr.push(physExt);
+  arr.push(csciExt);
+  
+  ret = arr[0];
+  for (i = 1; i <= arr.length; i++) {
+    if (arr [i] > arr[i-1]) ret = arr[i];
+  }
+  if (isNaN(ret)) ret = 0;
+  return ret;
+}
+
+function plBBD() {
+  let ret;
+  if (plBasic.value > (2*plExt.value)) {
+    ret = parseInt(plBasic.value);
+  } else {
+    ret = parseInt(2*plExt.value);
+  }
+  if (isNaN(ret)) ret = 0;
+  return ret;
+}
+
+function langBED() {
+  let ret;
+  if (langBasic.value > (2*langExt.value)) {
+    ret = parseInt(langBasic.value);
+  } else {
+    ret = parseInt(2*langExt.value);
+  }
+  if (isNaN(ret)) ret = 0;
+  return ret;
+}
+
+function mathBED() {
+  let ret;
+  if (mathBasic.value > (4*mathExt.value)) {
+    ret = parseInt(mathBasic.value);
+  } else {
+    ret = parseInt(4*mathExt.value);
+  }
+  if (isNaN(ret)) ret = 0;
+  return ret;
+}
+
+function physCsciD() {
+  let ret;
+  if (4*(physExt.value) > (4*csciExt.value)) {
+    ret = parseInt(4*physExt.value);
+  } else {
+    ret = parseInt(4*csciExt.value);
+  }
+  if (isNaN(ret)) ret = 0;
+  return ret;
+}
+
+function chePhysCsciD() {
+  let arr = [];
+  arr.push(4*chemExt);
+  arr.push(4*physExt);
+  arr.push(4*csciExt);
+  
+  ret = arr[0];
+  for (i = 1; i <= arr.length; i++) {
+    if (arr [i] > arr[i-1]) ret = arr[i];
+  }
+  if (isNaN(ret)) ret = 0;
+  return ret;
+}
+
+function wosGeoHalf() {
+  let ret;
+  if (1.5*(wosExt.value) > (1.5*geoExt.value)) {
+    ret = parseInt(1.5*wosExt.value);
+  } else {
+    ret = parseInt(1.5*geoExt.value);
+  }
+  if (isNaN(ret)) ret = 0;
+  return ret;
+}
+
+function geoHistHalf() {
+  let ret;
+  if (1.5*(geoExt.value) > (1.5*histExt.value)) {
+    ret = parseInt(1.5*geoExt.value);
+  } else {
+    ret = parseInt(1.5*histExt.value);
+  }
+  if (isNaN(ret)) ret = 0;
+  return ret;
+}
+
+function physGeo() {
+  let ret;
+  if (2*(physExt.value) > (2*geoExt.value)) {
+    ret = parseInt(2*physExt.value);
+  } else {
+    ret = parseInt(2*geoExt.value);
+  }
+  if (isNaN(ret)) ret = 0;
+  return ret;
+}
+
+//WBISIA
+//WBISIA
+//WBISIA
+
+function wbisiaArchitektura() {
+  let out = document.getElementById("wbisiaArchitektura");
+  let output = out.childNodes[3];
+  let scores = plBB() + langBEh() + mathBE() + histE();
+  if (scores == 0) scores = "--";
+  output.innerHTML = scores;
+}
+
+function wbisiaBiogospodarka() {
+  let out = document.getElementById("wbisiaBiogospodarka");
+  let output = out.childNodes[3];
+  let scores = plBB() + langBEh() + mathBE() + histE();
+  if (scores == 0) scores = "--";
+  output.innerHTML = scores;
+}
+
+function wbisiaBudownictwo() {
+  let out = document.getElementById("wbisiaBudownictwo");
+  let output = out.childNodes[3];
+  let scores = plBB() + langBEh() + mathBE() + physCsci();
+  if (scores == 0) scores = "--";
+  output.innerHTML = scores;
+}
+
+function wbisiaOchronaSrodowiska() {
+  let out = document.getElementById("wbisiaOchronaSrodowiska");
+  let output = out.childNodes[3];
+  let scores = plBB() + langBEh() + mathBE() + bioCheGeo();
+  if (scores == 0) scores = "--";
+  output.innerHTML = scores;
+}
+
+function wbisiaInzynieriaSrodowiska() {
+  let out = document.getElementById("wbisiaInzynieriaSrodowiska");
+  let output = out.childNodes[3];
+  let scores = plBB() + langBEh() + mathBE() + bioChePhys();
+  if (scores == 0) scores = "--";
+  output.innerHTML = scores;
+}
+
+//WBISIA
+//WBISIA
+//WBISIA
+
+//WBMIL
+//WBMIL
+//WBMIL
+
+function wbmilInzynieriaMaterialowa() {
+  let out = document.getElementById("wbmilInzynieriaMaterialowa");
+  let output = out.childNodes[3];
+  let scores = plBB() + langBEh() + mathBE() + chePhys();
+  if (scores == 0) scores = "--";
+  output.innerHTML = scores;
+}
+
+function wbmilLotnictwoIKosmonautyka() {
+  let out = document.getElementById("wbmilLotnictwoIKosmonautyka");
+  let output = out.childNodes[3];
+  let scores = plBB() + langBEh() + mathBE() + physE();
+  if (scores == 0) scores = "--";
+  output.innerHTML = scores;
+}
+
+function wbmilMechanikaIBudowaMaszyn() {
+  let out = document.getElementById("wbmilMechanikaIBudowaMaszyn");
+  let output = out.childNodes[3];
+  let scores = plBB() + langBEh() + mathBE() + physE();
+  if (scores == 0) scores = "--";
+  output.innerHTML = scores;
+}
+
+function wbmilMechatronika() {
+  let out = document.getElementById("wbmilMechatronika");
+  let output = out.childNodes[3];
+  let scores = plBB() + langBEh() + mathBE() + physCsci();
+  if (scores == 0) scores = "--";
+  output.innerHTML = scores;
+}
+
+function wbmilTransport() {
+  let out = document.getElementById("wbmilTransport");
+  let output = out.childNodes[3];
+  let scores = plBB() + langBEh() + mathBE() + physE();
+  if (scores == 0) scores = "--";
+  output.innerHTML = scores;
+}
+
+function wbmilZarzadzanieIInzynieriaProdukcji() {
+  let out = document.getElementById("wbmilZarzadzanieIInzynieriaProdukcji");
+  let output = out.childNodes[3];
+  let scores = plBB() + langBEh() + mathBE() + physE();
+  if (scores == 0) scores = "--";
+  output.innerHTML = scores;
+}
+
+//WBMIL
+//WBMIL
+//WBMIL
+
+//WCH
+//WCH
+//WCH
+
+function wchBiotechnologia() {
+  let out = document.getElementById("wchBiotechnologia");
+  let output = out.childNodes[3];
+  let scores = plBB() + langBEh() + mathBE() + bioChePhys();
+  if (scores == 0) scores = "--";
+  output.innerHTML = scores;
+}
+
+function wchInzynieriaChemiczna() {
+  let out = document.getElementById("wchInzynieriaChemiczna");
+  let output = out.childNodes[3];
+  let scores = plBB() + langBEh() + mathBE() + chePhysCsci();
+  if (scores == 0) scores = "--";
+  output.innerHTML = scores;
+}
+
+function wchTechnologiaChemiczna() {
+  let out = document.getElementById("wchTechnologiaChemiczna");
+  let output = out.childNodes[3];
+  let scores = plBB() + langBEh() + mathBE() + bioChePhysCsci();
+  if (scores == 0) scores = "--";
+  output.innerHTML = scores;
+}
+
+//WCH
+//WCH
+//WCH
+
+//WEII
+//WEII
+//WEII
+
+function weiiAutomatykaIRobotyka() {
+  let out = document.getElementById("weiiAutomatykaIRobotyka");
+  let output = out.childNodes[3];
+  let scores = plBB() + langBEh() + mathBE() + physCsci();
+  if (scores == 0) scores = "--";
+  output.innerHTML = scores;
+}
+
+function weiiElektronikaITelekomunikacja() {
+  let out = document.getElementById("weiiElektronikaITelekomunikacja");
+  let output = out.childNodes[3];
+  let scores = plBB() + langBEh() + mathBE() + physCsci();
+  if (scores == 0) scores = "--";
+  output.innerHTML = scores;
+}
+
+function weiiElektrotechnika() {
+  let out = document.getElementById("weiiElektrotechnika");
+  let output = out.childNodes[3];
+  let scores = plBB() + langBEh() + mathBE() + physCsci();
+  if (scores == 0) scores = "--";
+  output.innerHTML = scores;
+}
+
+function weiiEnergetyka() {
+  let out = document.getElementById("weiiEnergetyka");
+  let output = out.childNodes[3];
+  let scores = plBB() + langBEh() + mathBE() + physChem();
+  if (scores == 0) scores = "--";
+  output.innerHTML = scores;
+}
+
+function weiiInformatyka() {
+  let out = document.getElementById("weiiInformatyka");
+  let output = out.childNodes[3];
+  let scores = plBB() + langBEh() + mathBE() + physCsci();
+  if (scores == 0) scores = "--";
+  output.innerHTML = scores;
+}
+
+//WEII
+//WEII
+//WEII
+
+//WMIFS
+//WMIFS
+//WMIFS
+
+function wmifsInzynieriaMedyczna() {
+  let out = document.getElementById("wmifsInzynieriaMedyczna");
+  let output = out.childNodes[3];
+  let scores = plBBD() + langBED() + mathBED() + physCsciD();
+  if (scores == 0) scores = "--";
+  output.innerHTML = scores;
+}
+
+function wmifsMatematyka() {
+  let out = document.getElementById("wmifsMatematyka");
+  let output = out.childNodes[3];
+  let scores = plBB() + langBEh() + mathBE() + chePhysCsciD();
+  if (scores == 0) scores = "--";
+  output.innerHTML = scores;
+}
+
+//WMIFS
+//WMIFS
+//WMIFS
+
+//WMT
+//WMT
+//WMT
+
+function wmtMechanikaIBudowaMaszyn() {
+  let out = document.getElementById("wmtMechanikaIBudowaMaszyn");
+  let output = out.childNodes[3];
+  let scores = plBB() + langBEh() + mathBE() + physE();
+  if (scores == 0) scores = "--";
+  output.innerHTML = scores;
+}
+
+function wmtZarzadzanieIInzynieriaProdukcji() {
+  let out = document.getElementById("wmtZarzadzanieIInzynieriaProdukcji");
+  let output = out.childNodes[3];
+  let scores = plBB() + langBEh() + mathBE() + physE();
+  if (scores == 0) scores = "--";
+  output.innerHTML = scores;
+}
+
+//WMT
+//WMT
+//WMT
+
+//WZ
+//WZ
+//WZ
+
+function wzBezpieczenstwoWewnetrzne() {
+  let out = document.getElementById("wzBezpieczenstwoWewnetrzne");
+  let output = out.childNodes[3];
+  let scores = plBB() + langBED() + histE() + wosGeoHalf();
+  if (scores == 0) scores = "--";
+  output.innerHTML = scores;
+}
+
+function wzFinanseIRachunkowosc() {
+  let out = document.getElementById("wzFinanseIRachunkowosc");
+  let output = out.childNodes[3];
+  let scores = plBB() + langBED() + mathBE() + geoHistHalf();
+  if (scores == 0) scores = "--";
+  output.innerHTML = scores;
+}
+
+function wzLogistyka() {
+  let out = document.getElementById("wzLogistyka");
+  let output = out.childNodes[3];
+  let scores = plBB() + langBEh() + mathBE() + physGeo();
+  if (scores == 0) scores = "--";
+  output.innerHTML = scores;
+}
+
+function wzZarzadzanie() {
+  let out = document.getElementById("wzZarzadzanie");
+  let output = out.childNodes[3];
+  let scores = plBB() + langBED() + mathBE() + geoHistHalf();
+  if (scores == 0) scores = "--";
+  output.innerHTML = scores;
+}
+
+//WZ
+//WZ
+//WZ
+
+
+//----------
+//----------
+//----------
+//----------
+//----------
+//----------
+
 function score() {
-  scoresOutput.innerHTML = "abc";
-  return 0;
+  wbisiaArchitektura();
+  wbisiaBiogospodarka();
+  wbisiaBudownictwo();
+  wbisiaOchronaSrodowiska();
+  wbisiaInzynieriaSrodowiska();
+  
+  wbmilInzynieriaMaterialowa();
+  wbmilLotnictwoIKosmonautyka();
+  wbmilMechanikaIBudowaMaszyn();
+  wbmilMechatronika();
+  wbmilTransport();
+  wbmilZarzadzanieIInzynieriaProdukcji();
+  
+  wchBiotechnologia();
+  wchInzynieriaChemiczna();
+  wchTechnologiaChemiczna();
+  
+  weiiAutomatykaIRobotyka();
+  weiiElektronikaITelekomunikacja();
+  weiiElektrotechnika();
+  weiiEnergetyka();
+  weiiInformatyka();
+  
+  wmifsInzynieriaMedyczna();
+  wmifsMatematyka();
+  
+  wmtMechanikaIBudowaMaszyn();
+  wmtZarzadzanieIInzynieriaProdukcji();
+  
+  wzBezpieczenstwoWewnetrzne();
+  wzFinanseIRachunkowosc();
+  wzLogistyka();
+//  sport
+  wzZarzadzanie();
 }
 
 function cutLast(str) {
@@ -48,19 +592,27 @@ function check() {
   
 }
 
-var filledStatus = 0;
+var filledStatusPl = false;
+var filledStatusMath = false;
+var filledStatusLang = false;
 // For the "reset" button to reset red cells or alerts of incorrect data
 function filledStatusReset() {
+  clearFormInput.classList.remove = "clearFormInputRed";
+  clearFormInput.classList.add = "clearFormInputGreen";
   var inputsCorrect = document.querySelectorAll(".checkIfCorrect");
   for (i = 0; i < inputsCorrect.length; i++) {
     inputsCorrect[i].parentNode.parentNode.style.backgroundColor = "transparent";
     inputsCorrect[i].parentNode.parentNode.style.color = "";
   }
-  filledStatus = 0;
+  var filledStatusPl = false;
+  var filledStatusMath = false;
+  var filledStatusLang = false;
   tdAlert.style.color = "green";
   setTimeout(function() {
-      trAlert.style.display = "none";
-  }, 2000);
+      spanAlert.style.opacity = "";
+      clearFormInput.classList.remove = "clearFormInputGreen";
+      clearFormInput.classList.add = "clearFormInputRed";
+  }, 900);
 }
 
 //Checks if input is filled correctly
@@ -68,33 +620,47 @@ function unFilled(input) {
   var cell = input.parentNode.parentNode;
   var tdAlert = document.querySelector("#tdAlert");
   var trAlert = document.querySelector("#trAlert");
+  var spanAlert = document.querySelector("#spanAlert");
   if (input.value == "") 
   {
     cell.style.color = "#FFF";
     cell.style.backgroundColor = "#ff5c5c";
     tdAlert.style.color = "";
-    trAlert.style.display = "table-row";
-    tdAlert.style.value = "*Uzupełnij wartości poprawnie";
-    filledStatus++;
+    spanAlert.style.opacity = 1;
+    
+    if (input.id == "plBasic") filledStatusPl = true;
+    if (input.id == "mathBasic") filledStatusMath = true;
+    if (input.id == "langBasic") filledStatusLang = true;
+    
+    console.log(filledStatusPl, filledStatusMath, filledStatusLang);
+    
   } 
   else if (input.value != "") 
   {
-    filledStatus--;
+    if (input.id == "plBasic") filledStatusPl = false;
+    if (input.id == "mathBasic") filledStatusMath = false;
+    if (input.id == "langBasic") filledStatusLang = false;
     cell.style.color = "inherit";
     cell.style.backgroundColor = "transparent";
   }
-  if (filledStatus == 0) 
+  if (filledStatusPl == false && filledStatusMath == false && filledStatusLang == false) 
   {
     tdAlert.style.color = "green";
     setTimeout(function() 
     {
-      trAlert.style.display = "none";
+      spanAlert.style.opacity = "";
     }, 800);
   } 
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  courseTable.addEventListener("keydown", function() {
+  courseTable.addEventListener("keyup", function() {
+  score();
+}, false);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  courseTable.addEventListener("blur", function() {
   score();
 }, false);
 });
@@ -128,21 +694,15 @@ langBasic.addEventListener("keyup", function() {
 }, false);*/
 
 clearFormInput.addEventListener("click", function() {
-  clearFormInput.style.borderColor = "green";
-  clearFormInput.style.backgroundColor = "green";
-  clearFormInput.style.color = "white";
   filledStatusReset();
-  
-  setTimeout(function() 
-  {
-  clearFormInput.style.borderColor = "";
-  clearFormInput.style.backgroundColor = "";
-  clearFormInput.style.color = "";
-  }, 400);
-
+  setTimeout(function() {
+      score();
+  }, 10);
 }, false);
 
 /*courseInput.addEventListener("blur", function() {
   checkIfAnythingFilled();
 }, false);*/
   
+
+score();
