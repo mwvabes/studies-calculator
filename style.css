@@ -1,7 +1,56 @@
+*::-moz-selection {
+  color: none; }
+
+*::selection {
+  color: none; }
+
 body {
   font-family: 'Roboto', 'Arial', sans-serif;
   color: #4a4a4a;
-  font-size: 1rem; }
+  font-size: 1rem;
+  margin-top: 40px; }
+
+h1 {
+  font-size: 26px; }
+
+h2 {
+  font-size: 22px; }
+
+h3 {
+  font-size: 20px; }
+
+h4 {
+  font-size: 18px; }
+
+h5 {
+  font-size: 16px; }
+
+h6 {
+  font-size: 14px; }
+
+a {
+  color: #087e48; }
+
+.menuBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background-color: #e2e2e2;
+  text-align: center;
+  vertical-align: middle;
+  overflow: hidden;
+  color: #132b7e;
+  font-weight: bold;
+  -webkit-box-shadow: 0px 10px 20px -7px #949494;
+  -moz-box-shadow: 0px 10px 20px -7px #949494;
+  box-shadow: 0px 10px 20px -7px #949494; }
+
+.menuBar > p {
+  text-align: center;
+  margin: 0px auto;
+  padding-top: 10px; }
 
 .container {
   margin: 0px auto;
@@ -20,9 +69,22 @@ body {
   border: 1px solid #e2e2e2;
   border-collapse: collapse;
   table-layout: fixed;
-  width: 100%;
-  padding: 10px; }
+  padding: 10px;
+  width: 50%;
+  margin: 0px auto; }
 
+.courseTableOutput {
+  width: 100%; }
+
+.outputLP {
+  width: -moz-min-content; }
+
+.outputLM {
+  width: -moz-max-content; }
+
+@media only screen and (max-width: 720px) {
+  .course-table {
+    width: 100%; } }
 .courseTableInput tr:nth-of-type(n+3) td:nth-child(2) {
   font-size: 0.75rem; }
 
@@ -132,9 +194,11 @@ body {
   background-color: #ebebeb;
   border-bottom: 5px solid #e2e2e2; }
 
-.wzSport td:nth-child(3) {
+.noInfo {
   font-size: 0.75rem;
-  color: #adadad; }
+  color: #132b7e;
+  padding: 2px 5px 2px 5px;
+  background-color: #f4f4f4; }
 
 .outRed {
   color: #bc0101; }
@@ -145,7 +209,89 @@ body {
 
 .additionalExam {
   font-size: 0.75rem;
+  padding: 2px 5px 2px 5px;
+  color: #132b7e;
+  background-color: #e2e2e2;
+  margin-left: 5px; }
+
+.footer {
+  font-size: 0.75rem;
+  color: #7b7b7b;
+  width: 100%; }
+
+.footer > .container {
+  background-color: #f4f4f4;
+  text-align: center; }
+
+.info {
+  margin-top: 20px;
+  color: #7b7b7b;
+  width: 100%; }
+
+.info > .container {
+  background-color: #f4f4f4; }
+
+.mail {
+  text-decoration: underline;
+  color: #132b7e; }
+
+.logo {
+  margin: 0px auto;
+  max-height: 160px;
+  text-align: center;
+  margin-bottom: 20px; }
+
+.info > a {
+  color: #132b7e; }
+
+.info > .container > h1 {
+  text-align: center; }
+
+.infoCurrency {
+  font-size: 0.75rem;
+  padding: 2px 5px 2px 5px;
+  color: #132b7e;
+  background-color: #e2e2e2; }
+
+.menu {
+  color: #7b7b7b;
+  width: 100%; }
+
+.menu > .container {
+  background-color: #f4f4f4; }
+
+.menu > .container > h1 {
+  text-align: center; }
+
+.quote {
+  color: #7b7b7b;
+  width: 100%; }
+
+.quote > .container {
+  background-color: #f4f4f4; }
+
+.quote > .container > .quoteContent {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  color: #7b7b7b;
+  font-size: 30px;
+  max-width: 80%;
+  margin: 0px auto;
+  margin-top: 30px; }
+
+.quote > .container > .quoteAuthor {
+  font-size: 20px;
   color: #adadad;
-  vertical-align: middle; }
+  margin-right: 130px;
+  text-align: right; }
+
+.welcomeInfo {
+  color: #7b7b7b;
+  width: 100%; }
+
+.welcomeInfo > .container {
+  text-align: center;
+  color: #132b7e;
+  background-color: #f4f4f4; }
 
 /*# sourceMappingURL=style.css.map */
