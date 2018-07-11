@@ -626,6 +626,9 @@ function check() {
       coursesArr[i].value = cutLast(coursesArr[i]);
     }
   }
+  setTimeout(function() {
+      colours();
+  }, 100);
   
 }
 
@@ -702,7 +705,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 courseTable.addEventListener("keyup", function() {
   check();
-  colours();
 }, false);
 
 plBasic.addEventListener("blur", function() {
