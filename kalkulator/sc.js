@@ -26,12 +26,6 @@ var academics = ["wbisiaArchitektura", "wbisiaBudownictwo", "wbisiaOchronaSrodow
 
 var yearColumns = 3;
 
-//for (i = 0; i < coursesArr.length; i++) {
-//  if (coursesArr[i].value === "") {
-//    courseInput[i].value = 0;
-//  }
-//}
-
 function colourScores(courseccc) {
   let courseForColour = document.getElementById(courseccc);
   let score = parseFloat(courseForColour.childNodes[3].innerHTML);
@@ -719,29 +713,12 @@ langBasic.addEventListener("blur", function() {
   unFilled(langBasic);
 }, false);
 
-/*plBasic.addEventListener("keyup", function() {
-  unFilled(plBasic);
-}, false);
-
-mathBasic.addEventListener("keyup", function() {
-  unFilled(mathBasic);
-}, false);
-
-langBasic.addEventListener("keyup", function() {
-  unFilled(langBasic);
-}, false);*/
-
 clearFormInput.addEventListener("click", function() {
   filledStatusReset();
   setTimeout(function() {
       score();
   }, 100);
 }, false);
-
-/*courseInput.addEventListener("blur", function() {
-  checkIfAnythingFilled();
-}, false);*/
-
 
 document.addEventListener('DOMContentLoaded', function() {
   courseTable.addEventListener("blur", function() {
