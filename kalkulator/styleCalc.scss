@@ -89,9 +89,9 @@ ul {
   overflow: hidden;
   color: $navy;
   font-weight: bold;
-  -webkit-box-shadow: 0px 10px 20px -7px rgba(148,148,148,1);
-  -moz-box-shadow: 0px 10px 20px -7px rgba(148,148,148,1);
-  box-shadow: 0px 10px 20px -7px rgba(148,148,148,1);
+  -webkit-box-shadow: 0px 10px 20px -7px rgb(198, 198, 198);
+  -moz-box-shadow: 0px 10px 20px -7px rgb(198, 198, 198);
+  box-shadow: 0px 10px 20px -7px rgb(198, 198, 198);
 }
 
 .menuBar > p {
@@ -110,7 +110,7 @@ ul {
   display: inline-block;
   margin-top: 5px;
   text-decoration: none;
-  border-radius: 15px;
+  border-radius: 20px;
   -webkit-transition: background-color 200ms linear;
   -moz-transition: background-color 200ms linear;
   -o-transition: background-color 200ms linear;
@@ -162,36 +162,12 @@ ul {
   color: $primary-color;
 }
 
-.courseTableOutput {
-
-}
-
 .courseTableOutput, td {
   width: -webkit-fill-available;
   width: -moz-available;
   width: -o-available;
   width: -m-available;
 }
-
-/*.outputLP {
-  width: -moz-min-content;
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: -o-min-content;
-  width: -ms-min-content;
-}*/
-
-/*.outputLPP {
-  table-layout: fixed;
-}*/
-
-/*.outputLM {
-  width: -moz-max-content;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: -o-max-content;
-  width: -ms-max-content;
-}*/
 
 @media only screen and (min-width: 721px) {
   .container {
@@ -206,6 +182,32 @@ ul {
   }
   .additionalExam {
     font-size: 0.75rem;
+  }
+}
+
+@media only screen and (min-width: 976px) {
+  .row {
+    clear: both;
+  }
+  .toRow {
+    display: flex;
+  }
+  .alert {
+    margin-right: 5px;
+    height: 100%;
+    float: left;
+    width: calc(80% - 5px);
+  }
+  .alert > h5 {
+    margin-top: 20px;
+  }
+  .goTo {
+    width: 20%;
+    float: left;
+  }
+  .info {
+    width: 20%;
+    float: left;
   }
 }
 
@@ -300,10 +302,6 @@ ul {
 
 .infoInputCourseNotCount td {
   color: $alert-red;
-}
-
-.row {
-  clear: both;
 }
 
 .col-3 {
@@ -425,13 +423,7 @@ ul {
 }
 
 .info {
-  margin-top: 20px;
   color: $dark-grey;
-  width: 100%;
-}
-
-.info > .container {
-  background-color: $very-bright-grey;
 }
 
 .mail {
@@ -451,7 +443,7 @@ ul {
   color: $navy;
 }
 
-.info > .container > h1 {
+.info > h1 {
   text-align: center;
 }
 
@@ -477,31 +469,29 @@ ul {
 
 .alert {
   color: $dark-grey;
-  width: 100%;
   text-align: center;
-}
-
-.alert > .container {
   background-color: $bg-alert;
 }
 
-.alert > .container > h5 {
+.alert > h5 {
   text-align: center;
   color: $alert-red;
   max-width: 80%;
   margin: 0px auto;
-  padding-top: 10px;
+  padding-top: 20px;
   font-weight: 400;
 }
 
-.alert > .container > p {
+.alert > p {
   text-align: center;
   color: $navy;
+  padding-bottom: 10px;
 }
 
 .quote {
   color: $dark-grey;
   width: 100%;
+  clear: both;
 }
 
 .quote > .container {
@@ -552,23 +542,20 @@ ul {
 
 .goTo {
   color: $dark-grey;
-  width: 100%;
   margin-top: 20px;
-}
-
-.goTo > .container {
   text-align: center;
-  color: $navy;
-  background-color: $very-bright-grey;
 }
 
-.goTo > .container > a {
-  padding: 10px;
+.goTo > a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
   color: #FFF;
   font-weight: bold;
   display: inline-block;
   text-decoration: none;
-  border-radius: 10px;
+  border-radius: 20px;
 
   background: #db2b2b; /* Old browsers */
   background: -moz-linear-gradient(top, #db2b2b 0%,#ce4040 100%); /* FF3.6-15 */
@@ -585,7 +572,33 @@ ul {
   transition: all 140ms linear;
 }
 
-.goTo > .container > a:hover {
+.goTo > a:hover {
   background: $ored;
 }
 
+.info1 {
+  margin: 0px auto;
+  padding: 10px;
+  text-align: center;
+}
+
+.info1 > .container > span {
+  background-color: $bright-grey;
+  font-size: 12px;
+  color: $navy;
+  padding: 5px;
+  border: 1px solid $grey;
+}
+
+.infoInstruction > .container {
+  background-color: $very-bright-grey;
+  color: $dark-grey;
+}
+
+.infoInstruction > .container > h1 {
+  text-align: center;
+}
+
+.goToInstruction {
+  text-align: center;
+}
