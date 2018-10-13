@@ -11,10 +11,7 @@
 [http://vabes.pl/kalkulator-instrukcja](http://vabes.pl/kalkulator-instrukcja.html)
 
 ## Chcesz, aby kalkulator obsługiwał inną uczelnię?
-Daj znać na maila! 
-```
-kontakt.vabes@gmail.com
-```
+Daj znać na maila! `kontakt.vabes@gmail.com`
 
 ## Aktualność danych
 - Politechnika Rzeszowska `1 lipca 2018`
@@ -22,7 +19,6 @@ kontakt.vabes@gmail.com
 ___
 
 > Kalkulator nie zbiera informacji o wynikach abiturientów. 
-
 > Proces kalkulacji odbywa się lokalnie na komputerze użytkownika i nie jest przesyłany na serwer.
 
 
