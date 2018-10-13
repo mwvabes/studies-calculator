@@ -8,9 +8,9 @@
 - Politechnika Rzeszowska
 
 ## Instrukcja korzystania
-[http://vabes.pl/kalkulator-instrukcja](http://vabes.pl/kalkulator-instrukcja.html)
+[vabes.pl/kalkulator-instrukcja](http://vabes.pl/kalkulator-instrukcja.html)
 
-## Chcesz, aby kalkulator obsługiwał inną uczelnię?
+## Chcesz, aby kalkulator obsługiwał inne uczelnie?
 Daj znać na maila! `kontakt.vabes@gmail.com`
 
 ## Aktualność danych
