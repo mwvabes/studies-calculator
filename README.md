@@ -4,18 +4,14 @@
 
 [vabes.pl/kalkulator-prz](http://vabes.pl/kalkulator-prz.html "Kalkulator Politechniki Rzeszowskiej")
 
-## Obsługiwane uczelnie
-- Politechnika Rzeszowska
+## Obsługiwane uczelnie 
+- Politechnika Rzeszowska `Aktualność danych: 1 lipca 2018`
 
 ## Instrukcja korzystania
 [vabes.pl/kalkulator-instrukcja](http://vabes.pl/kalkulator-instrukcja.html)
 
 ## Chcesz, aby kalkulator obsługiwał inne uczelnie?
 Daj znać na maila! `kontakt.vabes@gmail.com`
-
-## Aktualność danych
-- Politechnika Rzeszowska `1 lipca 2018`
-
 ___
 
 > Kalkulator nie zbiera informacji o wynikach abiturientów. 
