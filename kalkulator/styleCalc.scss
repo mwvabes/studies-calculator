@@ -23,8 +23,11 @@ $navy : #132b7e;
 
 $primary-color: #0062ff;
 
+*::-moz-selection { color:none;}
+*::selection { color:none; }
+
 body {
-  font-family: 'Roboto', 'Arial', sans-serif;
+  font-family: 'Open Sans', 'Arial', sans-serif;
   color: $color;
   font-size: 1rem;
   margin-top: 40px;
@@ -124,6 +127,10 @@ ul {
   margin: 0px auto;
   padding: 5px;
   margin-bottom: 20px;
+}
+
+.courseInput {
+  border: 1px solid $primary-color;
 }
 
 .course-handler {
@@ -301,6 +308,11 @@ ul {
   color: $alert-red;
 }
 
+table.course-table > tbody > tr:nth-child(1) > td:nth-child(3) {
+  background-color: rgba(140, 168, 219, 0.33);
+  border: 2px solid $primary-color;
+}
+
 .col-3 {
   width: calc(33.333% - 28px);
   float: left;
@@ -390,6 +402,7 @@ ul {
   color: $navy;
   padding: 2px 5px 2px 5px;
   background-color: $very-bright-grey;
+  border: 1px solid $grey;
 }
 
 .outRed {
@@ -406,6 +419,7 @@ ul {
   color: $navy;
   background-color: $bright-grey;
   margin-left: 5px;
+  border: 1px solid $grey;
 }
 
 .footer {
@@ -492,13 +506,17 @@ ul {
 }
 
 .quote > .container {
-  background-color: $very-bright-grey;
+  background: #0055e8;
+  background: -moz-linear-gradient(-45deg, #0055e8 0%, #3396c4 100%);
+  background: -webkit-linear-gradient(-45deg, #0055e8 0%,#3396c4 100%);
+  background: linear-gradient(135deg, #0055e8 0%,#3396c4 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0055e8', endColorstr='#3396c4',GradientType=1 );
 }
 
 .quote > .container > .quoteContent {
   font-family: 'Playfair Display', serif;
   text-align: center;
-  color: $dark-grey;
+  color: rgba(255,255,255,0.9);
   font-size: 30px;
   max-width: 80%;
   margin: 0px auto;
@@ -507,7 +525,7 @@ ul {
 
 .quote > .container > .quoteAuthor {
   font-size: 20px;
-  color: $grey;
+  color: $very-bright-grey;
   margin-right: 130px;
   text-align: right;
 }
@@ -585,6 +603,8 @@ ul {
   color: $navy;
   padding: 5px;
   border: 1px solid $grey;
+  display: inline-block;
+  line-height: 1.5em;
 }
 
 .infoInstruction > .container {
@@ -598,4 +618,8 @@ ul {
 
 .goToInstruction {
   text-align: center;
+}
+
+.footerInfo > .container > p.footerInfoPWarning {
+  color: $ored;
 }
