@@ -23,8 +23,8 @@ $navy : #132b7e;
 
 $primary-color: #0062ff;
 
-*::-moz-selection { color:none;}
-*::selection { color:none; }
+*::-moz-selection { background-color: $bright-red; color: $very-bright-grey}
+*::selection { background-color: $bright-red; color: $very-bright-grey}
 
 body {
   font-family: 'Open Sans', 'Arial', sans-serif;
@@ -118,6 +118,10 @@ ul {
   transition: background-color 200ms linear;
 }
 
+table.course-table > tbody > tr.outputZero > td:nth-child(2) {
+  font-weight: 700;
+}
+
 .menuLink:hover {
   background-color: $green;
   color: #FFF;
@@ -155,7 +159,7 @@ ul {
 }
 
 .availableCalculators, td {
-  border: 1px solid $grey;
+  border: 1px solid $bright-grey;
   border-collapse: collapse;
   table-layout: fixed;
   padding: 10px;
@@ -186,6 +190,16 @@ ul {
   }
   .additionalExam {
     font-size: 0.75rem;
+  }
+  .quote > .container > .quoteAuthor {
+    margin-right: 130px;
+    text-align: right;
+  }
+  .additionalExam {
+    margin-left: 5px;
+  }
+  .quote > .container > .quoteContent {
+    max-width: 58%;
   }
 }
 
@@ -262,6 +276,13 @@ ul {
     font-size: 0.45rem;
     display: inline-block;
   }
+  .quote > .container > .quoteAuthor {
+    text-align: center;
+  }
+  .quote > .container > .quoteContent {
+    max-width: 90%;
+  }
+  
 }
 
 .courseTableInput tr:nth-of-type(n+3) td:nth-child(2) {
@@ -304,12 +325,17 @@ ul {
   color: $green;
 }
 
+.infoInputCourseNotCount {
+  border: 1px solid $bright-red;
+}
+
 .infoInputCourseNotCount td {
   color: $alert-red;
+  margin-top: 1px;
 }
 
 table.course-table > tbody > tr:nth-child(1) > td:nth-child(3) {
-  background-color: rgba(140, 168, 219, 0.33);
+  color: $primary-color;
   border: 2px solid $primary-color;
 }
 
@@ -417,9 +443,8 @@ table.course-table > tbody > tr:nth-child(1) > td:nth-child(3) {
 .additionalExam {
   padding: 2px 5px 2px 5px;
   color: $navy;
-  background-color: $bright-grey;
-  margin-left: 5px;
-  border: 1px solid $grey;
+  background-color: $very-bright-grey;
+  border: 1px solid $bright-red;
 }
 
 .footer {
@@ -518,7 +543,6 @@ table.course-table > tbody > tr:nth-child(1) > td:nth-child(3) {
   text-align: center;
   color: rgba(255,255,255,0.9);
   font-size: 30px;
-  max-width: 80%;
   margin: 0px auto;
   margin-top: 30px;
 }
@@ -526,8 +550,6 @@ table.course-table > tbody > tr:nth-child(1) > td:nth-child(3) {
 .quote > .container > .quoteAuthor {
   font-size: 20px;
   color: $very-bright-grey;
-  margin-right: 130px;
-  text-align: right;
 }
 
 .welcomeInfo {
@@ -597,9 +619,25 @@ table.course-table > tbody > tr:nth-child(1) > td:nth-child(3) {
   text-align: center;
 }
 
+.info1Big {
+  margin: 0px auto;
+  padding: 10px;
+  text-align: center;
+}
+
 .info1 > .container > span {
   background-color: $bright-grey;
   font-size: 12px;
+  color: $navy;
+  padding: 5px;
+  border: 1px solid $grey;
+  display: inline-block;
+  line-height: 1.5em;
+}
+
+.info1Big > .container > span {
+  background-color: $bright-grey;
+  font-size: 0.9em;
   color: $navy;
   padding: 5px;
   border: 1px solid $grey;
@@ -622,4 +660,46 @@ table.course-table > tbody > tr:nth-child(1) > td:nth-child(3) {
 
 .footerInfo > .container > p.footerInfoPWarning {
   color: $ored;
+}
+
+.seeMore > .container > a > button {
+  margin: 0px auto;
+  font-size: 0.75em;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: 'Open Sans';
+  background-color: $primary-color;
+  color: $very-bright-grey;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  
+  -webkit-transition: background-color 200ms linear;
+  -moz-transition: background-color 200ms linear;
+  -o-transition: background-color 200ms linear;
+  -ms-transition: background-color 200ms linear;
+  transition: background-color 200ms linear;
+  
+  cursor: pointer;
+  border-radius: 16px;
+  border-color: $navy;
+}
+
+.seeMore > .container > a > button:hover {
+  -webkit-transition: background-color 200ms linear;
+  -moz-transition: background-color 200ms linear;
+  -o-transition: background-color 200ms linear;
+  -ms-transition: background-color 200ms linear;
+  transition: background-color 200ms linear;
+  
+  background-color: $navy;
+}
+
+.seeMore > .container {
+  text-align: center;
+}
+
+table.course-table > tbody > tr:nth-child(1) > td {
+  font-weight: 700;
 }
