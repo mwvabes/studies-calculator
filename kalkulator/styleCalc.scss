@@ -73,6 +73,10 @@ a {
   color: $aColor;
 }
 
+a:hover {
+  color: $navy;
+}
+
 ul {
   padding-right: 40px;
 }
@@ -443,7 +447,7 @@ table.course-table > tbody > tr:nth-child(1) > td:nth-child(3) {
 .additionalExam {
   padding: 2px 5px 2px 5px;
   color: $navy;
-  background-color: $very-bright-grey;
+  background-color: $not-very-bright-grey;
   border: 1px solid $bright-red;
 }
 
@@ -488,6 +492,7 @@ table.course-table > tbody > tr:nth-child(1) > td:nth-child(3) {
   padding: 2px 5px 2px 5px;
   color: $navy;
   background-color: $bright-grey;
+  border: 1px solid $grey;
 }
 
 .menu {
@@ -560,7 +565,7 @@ table.course-table > tbody > tr:nth-child(1) > td:nth-child(3) {
 
 .welcomeInfo > .container {
   text-align: center;
-  color: $navy;
+  color: $dark-grey;
   background-color: $very-bright-grey;
 }
 
@@ -659,6 +664,10 @@ table.course-table > tbody > tr:nth-child(1) > td:nth-child(3) {
 }
 
 .footerInfo > .container > p.footerInfoPWarning {
+  color: $ored;
+}
+
+.InfoPWarning {
   color: $ored;
 }
 
